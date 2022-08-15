@@ -19,8 +19,8 @@ deck$.subscribe((pokemons) => {
       <SearchBar />
     </section>
 
-    <section v-if="deckPokemonList.length" class="section box level-right">
-      <div class="is-flex is-flex-direction-column">
+    <section v-if="deckPokemonList.length" class="section box level-right pokemon-list">
+      <div class="is-flex is-flex-direction-column pokemon-list__items">
         <div v-for="pokemon in deckPokemonList" :key="pokemon.id" class="media">
           <div class="media-left">
             <p class="image is-128x128">
@@ -47,3 +47,14 @@ deck$.subscribe((pokemons) => {
     </section>
   </div>
 </template>
+
+<style lang="scss">
+.pokemon-list {
+  overflow: auto;
+  padding-bottom: 24px;
+
+  &__items {
+    max-height: 600px;
+  }
+}
+</style>

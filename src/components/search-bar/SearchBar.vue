@@ -1,7 +1,10 @@
 <template>
   <div ref="root" class="is-flex is-flex-direction-column search-bar">
-    <input v-model="search" class="input search-bar__input" @focus="isFocused = true" />
-    <div class="dropdown" :class="{ 'is-active': search && isFocused && filteredPokemonList.length }">
+    <div class="is-flex">
+      <input v-model="search" class="input search-bar__input" @focus="isFocused = true" />
+      <button class="button is-light" @click="onClear">x</button>
+    </div>
+    <div class="dropdown" :class="{ 'is-active': filteredPokemonList.length }">
       <div class="dropdown-menu search-bar__content">
         <div class="dropdown-content">
           <div
@@ -69,6 +72,11 @@ const onSelect = (id: number) => {
   }
   selected$.next([...selected$.value, id]);
 };
+
+const onClear = () => {
+  search.value = '';
+  selected$.next([]);
+}
 </script>
 
 <style lang="scss">
