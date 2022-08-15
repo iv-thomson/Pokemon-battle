@@ -1,6 +1,6 @@
-# Vue 3 + TypeScript + Vite
+# Pokemon battle
 
-This template should help get you started developing with Vue 3 and TypeScript in Vite. The template uses Vue 3 `<script setup>` SFCs, check out the [script setup docs](https://v3.vuejs.org/api/sfc-script-setup.html#sfc-script-setup) to learn more.
+This is very simple app that I did to study RXjs. Just run `yarn dev`.
 
 ## Recommended IDE Setup
 
